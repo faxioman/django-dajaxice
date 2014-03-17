@@ -1,7 +1,10 @@
 import logging
 
 from django.conf import settings
-from django.utils import simplejson
+try:
+    import json as simplejson
+except ImportError:
+    from django.utils import simplejson
 from django.views.generic.base import View
 from django.http import HttpResponse, Http404
 
